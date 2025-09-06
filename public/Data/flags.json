@@ -1,0 +1,17 @@
+{
+  "newDashboard": {
+    "enabled": false,
+    "beta": false,
+    "theme": "light"
+  },
+  "darkMode": {
+    "enabled": true,
+    "beta": true,
+    "theme": "light"
+  },
+  "recommendationEngine": {
+    "enabled": false,
+    "beta": true,
+    "theme": "light"
+  }
+}
