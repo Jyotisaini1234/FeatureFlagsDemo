@@ -35,29 +35,15 @@ const FeatureList: React.FC = () => {
 
   return (
     <div
-      style={{
-        padding: "20px",
-        minHeight: "100vh",
-        backgroundColor: flags.newDashboard.theme === "dark" ? "#222" : "#fff",
-        color: flags.newDashboard.theme === "dark" ? "#fff" : "#000",
-      }}
-    >
+      style={{padding: "20px",minHeight: "100vh", backgroundColor: flags.newDashboard.theme === "dark" ? "#222" : "#fff", color: flags.newDashboard.theme === "dark" ? "#fff" : "#000", }}>
       <h1>React FF4J-like Feature Flags Demo</h1>
 
-      {/* New Dashboard card */}
-      <FeatureCard
-        name="New Dashboard"
-        feature={flags.newDashboard}
-        onToggle={() => toggleFeature("newDashboard")}
-        onClick={() => toggleFeature("newDashboard")}
-      />
+      <FeatureCard name="New Dashboard"feature={flags.newDashboard} onToggle={() => toggleFeature("newDashboard")} onClick={() => toggleFeature("newDashboard")}/>
       {flags.newDashboard.enabled && (
         <button onClick={() => toggleTheme("newDashboard")} style={{ marginBottom: "20px" }}>
           Toggle Dashboard Theme
         </button>
       )}
-
-      {/* Show full dashboard only if enabled */}
       <NewDashboard feature={flags.newDashboard} />
 
       <h3>Other Features:</h3>
@@ -65,13 +51,7 @@ const FeatureList: React.FC = () => {
         {Object.entries(flags)
           .filter(([name]) => name !== "newDashboard")
           .map(([name, feature]) => (
-            <FeatureCard
-              key={name}
-              name={name}
-              feature={feature}
-              onToggle={() => toggleFeature(name)}
-            />
-          ))}
+            <FeatureCard key={name}  name={name}feature={feature} onToggle={() => toggleFeature(name)} />))}
       </div>
     </div>
   );
